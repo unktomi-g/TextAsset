@@ -1,9 +1,7 @@
 // Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
+#include "TextAssetEditorPrivatePCH.h"
 #include "STextAssetEditor.h"
-#include "TextAsset.h"
-#include "Widgets/SBoxPanel.h"
-#include "Widgets/Input/SMultiLineEditableTextBox.h"
 
 
 #define LOCTEXT_NAMESPACE "STextAssetEditor"

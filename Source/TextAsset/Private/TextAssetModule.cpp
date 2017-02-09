@@ -1,8 +1,7 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
-#include "CoreMinimal.h"
+#include "TextAssetPCH.h"
 #include "ModuleInterface.h"
-#include "ModuleManager.h"
 #include "TextAsset.h"
 
 

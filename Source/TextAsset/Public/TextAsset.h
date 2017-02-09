@@ -2,9 +2,6 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "UObject/Object.h"
-#include "UObject/ObjectMacros.h"
 #include "TextAsset.generated.h"
 
 
@@ -23,4 +20,13 @@ public:
 	/** Holds the stored text. */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="TextAsset")
 	FText Text;
+
+	/** Converts to Utf-8 encoded byte array */
+	UFUNCTION(Blueprintpure, Category = "TextAsset")
+		void ToBytes(TArray<uint8>& Bytes)
+	{
+		FTCHARToUTF8 Converter(*Text.ToString());
+		Bytes.SetNumUninitialized(Converter.Length());
+		FMemory::Memcpy(Bytes.GetData(), (uint8*)(ANSICHAR*)Converter.Get(), Bytes.Num());
+	}
 };

@@ -1,9 +1,7 @@
 // Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
+#include "TextAssetEditorPrivatePCH.h"
 #include "TextAssetFactory.h"
-
-#include "TextAsset.h"
-#include "Misc/FileHelper.h"
 
 
 /* UTextAssetFactory structors
@@ -13,6 +11,8 @@ UTextAssetFactory::UTextAssetFactory( const FObjectInitializer& ObjectInitialize
 	: Super(ObjectInitializer)
 {
 	Formats.Add(FString(TEXT("txt;")) + NSLOCTEXT("UTextAssetFactory", "FormatTxt", "Text File").ToString());
+	Formats.Add(FString(TEXT("xml;")) + NSLOCTEXT("UTextAssetFactory", "FormatXml", "XML File").ToString());
+	Formats.Add(FString(TEXT("json;")) + NSLOCTEXT("UTextAssetFactory", "FormatJSON", "JSON File").ToString());
 	SupportedClass = UTextAsset::StaticClass();
 	bCreateNew = false;
 	bEditorImport = true;
